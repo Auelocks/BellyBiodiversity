@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-success">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center" style="background-image: url(images/pexels-kindel-media-7298670.jpg);">
+        <h1><strong>Belly Button Biodiversity Dashboard</strong></h1>
+        <p><strong>Use the interactive charts below to explore the dataset</strong></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="h5" >This page is designed to visualize the bacterial data for different bacterial species found in the belly buttons of human volunteer test subjects.  Each individual test subject is identified by Test Subject ID Number.  The Demographic Info for each test subject, Top 10 Bacteria Cultures Found in subjects’ belly buttons (including names and counts), and the test subjects’ reported washing frequency can be isolated and viewed by selecting Test Subject ID No. from the dropdown menu below.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class="col-md-12"></div>
+      <p class="h5">The following visualization illustrates the full profile of Bacteria Cultures per Sample for the selected test subject:</p>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
+</html>
